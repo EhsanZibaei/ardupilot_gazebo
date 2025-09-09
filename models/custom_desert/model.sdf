@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <model name="desert_scene" static="true">
+
+    <!-- Desert -->
+    <static>true</static>
+    <link name="desert">
+      <visual name="desert_visual">
+        <geometry>
+          <mesh>
+            <uri>meshes/desert_visual3.glb</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    <collision name="desert_collision">
+      <geometry>
+        <mesh><uri>meshes/desert_collision.stl</uri></mesh>
+      </geometry>
+    </collision>
+      <pose>0 0 0 0 0 0</pose>
+    </link>
+
+  </model>
+</sdf>
