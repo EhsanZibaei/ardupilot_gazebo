@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot name="drone_with_gimbal" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:include filename="../iris_with_standoffs/model.urdf.xacro"/>
+  <xacro:include filename="../gimbal_small_3d/model.urdf.xacro"/>
+  
+  <!-- Instantiate drone -->
+  <!-- <xacro:iris_drone prefix=""/> -->
+  
+  <!-- Attach gimbal to drone -->
+  <xacro:gimbal prefix="gimbal_" parent_link="base_link">
+    <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+  </xacro:gimbal>
+
+</robot>
