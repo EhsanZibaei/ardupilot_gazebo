@@ -221,14 +221,14 @@
         <pose>0 0 0.04 -1.57 -1.57 0</pose>
         <topic>gz/camera</topic>
         <camera>
-          <horizontal_fov>2.0</horizontal_fov>
+          <horizontal_fov>1.047</horizontal_fov>
           <image>
-            <width>640</width>
-            <height>480</height>
+            <width>320</width>
+            <height>240</height>
           </image>
           <clip>
-            <near>0.05</near>
-            <far>15000</far>
+            <near>0.1</near>
+            <far>40</far>
           </clip>
         </camera>
         <always_on>1</always_on>
