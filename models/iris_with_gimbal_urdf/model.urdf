@@ -4,19 +4,7 @@
   <!-- ========== IRIS QUADCOPTER BASE ========== -->
   
   <link name="base_link">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="1.5"/>
-      <inertia ixx="0.008" ixy="0" ixz="0" iyy="0.015" iyz="0" izz="0.017"/>
-    </inertial>
-    
-    <collision name="base_collision">
-      <origin xyz="0 0 -0.08" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.47 0.47 0.23"/>
-      </geometry>
-    </collision>
-    
+ 
     <visual name="base_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -83,143 +71,7 @@
     <child link="imu_link"/>
   </joint>
 
-  <!-- Rotor 0 (Front Right) -->
-  <link name="rotor_0">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.025"/>
-      <inertia ixx="9.75e-06" ixy="0" ixz="0" iyy="0.000166704" iyz="0" izz="0.000167604"/>
-    </inertial>
-    
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="0.1" length="0.005"/>
-      </geometry>
-    </collision>
-    
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://ardupilot_gazebo/models/iris_with_standoffs/meshes/iris_prop_ccw.dae"/>
-      </geometry>
-      <material name="blue">
-        <color rgba="0 0 1 1"/>
-      </material>
-    </visual>
-  </link>
-  
-  <joint name="rotor_0_joint" type="continuous">
-    <origin xyz="0.13 -0.22 0.023" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="rotor_0"/>
-    <axis xyz="0 0 1"/>
-    <dynamics damping="0.004"/>
-  </joint>
-
-  <!-- Rotor 1 (Rear Left) -->
-  <link name="rotor_1">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.025"/>
-      <inertia ixx="9.75e-06" ixy="0" ixz="0" iyy="0.000166704" iyz="0" izz="0.000167604"/>
-    </inertial>
-    
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="0.1" length="0.005"/>
-      </geometry>
-    </collision>
-    
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://ardupilot_gazebo/models/iris_with_standoffs/meshes/iris_prop_ccw.dae"/>
-      </geometry>
-      <material name="blue">
-        <color rgba="0 0 1 1"/>
-      </material>
-    </visual>
-  </link>
-  
-  <joint name="rotor_1_joint" type="continuous">
-    <origin xyz="-0.13 0.2 0.023" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="rotor_1"/>
-    <axis xyz="0 0 1"/>
-    <dynamics damping="0.004"/>
-  </joint>
-
-  <!-- Rotor 2 (Front Left) -->
-  <link name="rotor_2">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.025"/>
-      <inertia ixx="9.75e-06" ixy="0" ixz="0" iyy="0.000166704" iyz="0" izz="0.000167604"/>
-    </inertial>
-    
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="0.1" length="0.005"/>
-      </geometry>
-    </collision>
-    
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://ardupilot_gazebo/models/iris_with_standoffs/meshes/iris_prop_cw.dae"/>
-      </geometry>
-      <material name="green">
-        <color rgba="0 1 0 1"/>
-      </material>
-    </visual>
-  </link>
-  
-  <joint name="rotor_2_joint" type="continuous">
-    <origin xyz="0.13 0.22 0.023" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="rotor_2"/>
-    <axis xyz="0 0 1"/>
-    <dynamics damping="0.004"/>
-  </joint>
-
-  <!-- Rotor 3 (Rear Right) -->
-  <link name="rotor_3">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.025"/>
-      <inertia ixx="9.75e-06" ixy="0" ixz="0" iyy="0.000166704" iyz="0" izz="0.000167604"/>
-    </inertial>
-    
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="0.1" length="0.005"/>
-      </geometry>
-    </collision>
-    
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://ardupilot_gazebo/models/iris_with_standoffs/meshes/iris_prop_cw.dae"/>
-      </geometry>
-      <material name="green">
-        <color rgba="0 1 0 1"/>
-      </material>
-    </visual>
-  </link>
-  
-  <joint name="rotor_3_joint" type="continuous">
-    <origin xyz="-0.13 -0.2 0.023" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="rotor_3"/>
-    <axis xyz="0 0 1"/>
-    <dynamics damping="0.004"/>
-  </joint>
-
-  <!-- ========== GIMBAL ATTACHMENT ========== -->
+    <!-- ========== GIMBAL ATTACHMENT ========== -->
   
   <joint name="gimbal_joint" type="fixed">
     <origin xyz="0 -0.01 -0.124923" rpy="1.5707963 0 1.5707963"/>
@@ -374,12 +226,18 @@
   </joint>
 
   <!-- Camera optical frame (for sensor data) -->
-  <link name="camera_optical_frame"/>
+  <link name="camera_link"/>
   
-  <joint name="camera_optical_joint" type="fixed">
-    <origin xyz="0 0 0.02" rpy="-1.5707963 -1.5707963 0"/>
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0 0 0.04" rpy="-1.57 -1.57 0"/>
     <parent link="pitch_link"/>
-    <child link="camera_optical_frame"/>
+    <child link="camera_link"/>
   </joint>
 
+  <link name="yolo_link"></link>
+  <joint name="yolo_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+    <parent link="camera_link"/>
+    <child link="yolo_link"/>
+  </joint>
 </robot>
