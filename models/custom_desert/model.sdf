@@ -8,13 +8,13 @@
       <visual name="desert_visual">
         <geometry>
           <mesh>
-            <uri>meshes/desert_airplane_horse_camel.glb</uri>
+            <uri>meshes/scene.glb</uri>
           </mesh>
         </geometry>
       </visual>
     <collision name="desert_collision">
       <geometry>
-        <mesh><uri>meshes/desert_airplane_horse_camel.stl</uri></mesh>
+        <mesh><uri>meshes/scene.stl</uri></mesh>
       </geometry>
     </collision>
       <pose>0 0 0 0 0 0</pose>
